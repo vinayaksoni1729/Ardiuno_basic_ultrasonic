@@ -7,7 +7,6 @@ void setup() {
   // put your setup code here, to run once:
   pinMode(trig,OUTPUT);
   pinMode(echo,INPUT);
-  Serial.begin(9600);
 }
 
 void loop() {
@@ -18,9 +17,8 @@ digitalWrite(trig,HIGH);
 delayMicroseconds(10);
 time=pulseIn(echo,HIGH);
 dist=0.34*time/2;
-dist=dist/10;
-Serial.println(dist);
-if(dist<10){
+
+if(dist<100){
   digitalWrite(ledpin,HIGH);}
 else{
   digitalWrite(ledpin,LOW);}
